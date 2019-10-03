@@ -16,6 +16,12 @@ The code is composed of 5 source files that should be visited in the following o
 
 ```
 $ make
+gfortran -g -O3 -ffree-form -std=f2008 -c cooling.f90
+gfortran -g -O3 -ffree-form -std=f2008 -c cooling_example1.f90
+gfortran -g -O3 -ffree-form -std=f2008 -c cooling_example2.f90
+gfortran -g -O3 -ffree-form -std=f2008 -c cooling_factory.f90
+gfortran -g -O3 -ffree-form -std=f2008 -o cooling_test cooling.o cooling_example1.o cooling_example2.o cooling_factory.o main.f90 
+
 $ ./cooling_test
  Which cooling function do you want : 
 Cooling1
