@@ -1,6 +1,6 @@
 # Polymorphism in modern Fortran for mini-ramses
 
-The contents of this repo were developed as part of the Ramses User Meeting 2019 Hackaton.
+The content of this repo was developed as part of the Ramses User Meeting 2019 Hackaton.
 Here we look at polymorphism as a way to implement various physics module in Ramses while avoiding filling-up the main code with disjunctive cases. The contents of this repo is not at all physical, it is just meant as an example of how to implement this type of strategies, but is clearly not a real cooling function example.
 
 ## Source code :
