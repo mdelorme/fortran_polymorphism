@@ -1,3 +1,4 @@
+! This module implements another cooling function that is not the default one
 module cooling_example1
   use cooling
 
@@ -6,21 +7,22 @@ module cooling_example1
 
   ! Cooling "functor" type definition
   type, extends(CoolingFunction) :: MyCooling1
+     ! We can add new attributes here. These will be only visible for this specific class
      integer :: my_cooling_parameter
    contains
-     procedure :: init_cooling => init_my_cooling_1
+     procedure :: init_cooling => init_my_cooling_1 ! NOTE : We have to use different names for the implementations 
      procedure :: compute_cooling => compute_my_cooling_1
   end type MyCooling1
 
 contains
   ! Procedure definition
-  subroutine init_my_cooling_1(this, attr_1, attr_2)
+  subroutine init_my_cooling_1(this, attr_1, attr_2) ! The number of parameters here must always be the same as the parent-class
     implicit none
 
     class(MyCooling1) :: this
     integer :: attr_1, attr_2
 
-    ! We use the default constructor of CoolingFunction
+    ! We use the default initialisation routine of CoolingFunction
     call this%CoolingFunction%init_cooling(attr_1, attr_2)
 
     ! We can also do precomputations that will be only used with this version of the cooling
